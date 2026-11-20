@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "config_hash": "97b0fdbfad53d215cfb9e8a9fe7d8c2a86f3e03e045921322b0a8cad2d7f64a6",
+  "code_hash": "99e416f3d4258373bd6fa157636b663780335c311a60916f3dafb1d53b4b5bda",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "macOS-26.7-arm64-arm-64bit",
+    "torch": "2.7.1",
+    "numpy": "2.2.6",
+    "device": "mps",
+    "mps_built": true,
+    "mps_available": true,
+    "mps_cpu_fallback": false
+  },
+  "parameter_count": 399233,
+  "trainable_parameters": 399233,
+  "technical_smoke": false
+}

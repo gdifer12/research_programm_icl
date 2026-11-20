@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "config_hash": "562a472479233db0f8170b8e1cad1e75cbca213df6314888d969d74edf9d9192",
+  "experiment": "assign_add",
+  "banks": {
+    "probe_train": {
+      "file": "probe_train.npz",
+      "sha256": "aa18a41f1380d162313a9720daa48503f8e03deaf93ba9c3c9d9247e8d48c985",
+      "episodes": 600,
+      "seed": 100047
+    },
+    "validation": {
+      "file": "validation.npz",
+      "sha256": "ee57e9506b64fabbd9686454b858f3e12c091f73b11e914817101d035189953c",
+      "episodes": 12000,
+      "seed": 200050
+    },
+    "id_test": {
+      "file": "id_test.npz",
+      "sha256": "fb0fadaef0d3cbe9601cd4fabf2942fce0f4f0f636978a5a95eaa558bf1ff2aa",
+      "episodes": 12000,
+      "seed": 300053
+    },
+    "test": {
+      "file": "test.npz",
+      "sha256": "6036826a900c9b9522547be63c343674c977a15475bde5c6811d87e534813fc5",
+      "episodes": 12000,
+      "seed": 400056
+    }
+  },
+  "task_state_sha256": "d5a75081bb6d8dc07003a07ccaff7979095faa70f681b3b62c3d6a018a980be9",
+  "technical_smoke": false
+}

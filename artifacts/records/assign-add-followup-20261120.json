@@ -1,0 +1,31 @@
+{
+  "training_started_at": "2026-11-20T15:58:20.489154+00:00",
+  "cross_run": "cross-model2-stream1",
+  "continuation_run": "continue-seed2",
+  "state": "completed",
+  "results": {
+    "cross-model2-stream1": {
+      "step": 30000,
+      "accuracy": {
+        "id_test": 0.7101666666666666,
+        "test": 0.4563333333333333
+      },
+      "final_sha256": "43f293bdf7b96f944a2c2f1029a054e271ee4dac2717ed07a06035a4446bd081"
+    },
+    "continue-seed2": {
+      "step": 60000,
+      "accuracy": {
+        "id_test": 0.7305833333333334,
+        "test": 0.49333333333333335
+      },
+      "final_sha256": "256b6d58d8c521ca546681b52467125d547dd3935f340805fd7570c0371ebc40"
+    }
+  },
+  "cross_checks": {
+    "initial_parameters_equal": 13,
+    "initial_source_sha256": "7a8904f9503c78ceb8b8f625a9933d233f73508ca750f745f46ec2143da59e3f",
+    "first_three_batches_sha256": "a6c601326a86cd17614394a256179a136b7a90f215180d4c24d92998da9cd548",
+    "good_stream_seed": 10001
+  },
+  "finished_at": "2026-11-20T16:16:10.248002+00:00"
+}

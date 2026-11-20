@@ -1,0 +1,10 @@
+{
+  "state": "completed",
+  "step": 30000,
+  "attempt_id": "dfb236f15134",
+  "resume_from_step": 0,
+  "training_seconds_this_attempt": 464.26551347434724,
+  "loop_wall_seconds_this_attempt": 527.8465458339997,
+  "stop_requested": false,
+  "technical_smoke": false
+}

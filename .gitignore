@@ -1,0 +1,23 @@
+.venv/
+.venv-*/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.DS_Store
+artifacts/cache/
+artifacts/tmp/
+artifacts/config/
+artifacts/local-data/
+artifacts/jupyter/
+dist/
+build/
+.runtime/
+# Additional training runs are local until selected for the replication data.
+/artifacts/runs/*
+!/artifacts/runs/assign-add-jupyter-20261119/
+!/artifacts/runs/kobayashi-jupyter-20261119/

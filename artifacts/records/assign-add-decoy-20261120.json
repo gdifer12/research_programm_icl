@@ -1,0 +1,49 @@
+{
+  "episode_rng_seed": 20261120803,
+  "edit_rng_seed": 20261120804,
+  "episodes": 3000,
+  "baseline_correct": 190,
+  "wrong_matching_decoy": 2631,
+  "selected": 2039,
+  "follows_delta_source_control": [
+    1033,
+    1
+  ],
+  "source_only_control_only_both": [
+    1032,
+    0,
+    1
+  ],
+  "unchanged_source_control": [
+    5,
+    1616
+  ],
+  "correct_source_control": [
+    52,
+    6
+  ],
+  "other_training_seeds": {
+    "1": {
+      "correct_original_source_control": [
+        2003,
+        2004,
+        2002
+      ],
+      "follows_own_delta_source_control": [
+        0,
+        0
+      ]
+    },
+    "3": {
+      "correct_original_source_control": [
+        2006,
+        2006,
+        2006
+      ],
+      "follows_own_delta_source_control": [
+        0,
+        0
+      ]
+    }
+  }
+}

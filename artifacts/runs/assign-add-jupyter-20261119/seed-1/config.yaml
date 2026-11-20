@@ -1,0 +1,52 @@
+schema_version: 1
+task_seed: 42
+model_seed: 1
+train_seed: 10001
+eval_seed: 44
+train:
+  steps: 30000
+  batch_size: 512
+  lr: 0.001
+  optimizer: adamw
+  weight_decay: 0.02
+  betas:
+  - 0.9
+  - 0.999
+  scheduler: constant
+  warmup_steps: 0
+  grad_clip: 0.0
+  eval_every: 100
+  save_every: 100
+  log_every: 10
+  precision: fp32
+  deterministic: true
+  threads: 4
+  analysis_checkpoints: 20
+  analysis_every: 100
+eval:
+  episodes: 12000
+  batch_size: 512
+  diagnostic_episodes: 600
+  bootstrap_samples: 1000
+analysis:
+  enabled: true
+  save_activations: false
+data:
+  modulus: 59
+  n_vars: 12
+  seq_len: 16
+  train_pair_fraction: 0.7
+  forbidden_lhs:
+  - 10
+  - 11
+  forbidden_rhs:
+  - 0
+  - 1
+model:
+  n_embd: 128
+  n_head: 1
+  n_layer: 2
+  n_mlp: 512
+  init_std: 0.07071067811865475
+experiment: assign_add
+technical_smoke: false

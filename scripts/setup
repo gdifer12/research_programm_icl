@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -euo pipefail
+root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+cd -- "$root"
+export PYTHONNOUSERSITE=1
+unset PYTHONHOME PYTHONPATH
+interpreter="$root/.runtime/python/bin/python3.12"
+if [[ ! -x "$interpreter" && ! -x "$root/.venv/bin/python" ]]; then
+    if command -v uv >/dev/null; then
+        uv_executable="$(command -v uv)"
+    else
+        # Keep the installer local on systems with Python but without uv.
+        python3 -m venv "$root/.runtime/bootstrap"
+        uv_executable="$root/.runtime/bootstrap/bin/uv"
+        "$root/.runtime/bootstrap/bin/python" -m pip install 'uv>=0.8'
+    fi
+    export UV_PYTHON_INSTALL_DIR="$root/.runtime"
+    export UV_CACHE_DIR="$root/artifacts/cache/uv"
+    "$uv_executable" python install --no-bin 3.12
+    interpreter="$("$uv_executable" python find --managed-python --system 3.12)"
+fi
+if [[ ! -x "$root/.venv/bin/python" ]]; then
+    "$interpreter" -m venv "$root/.venv"
+fi
+python="$root/.venv/bin/python"
+# Guard existing environments before installing packages or registering the kernel.
+PYTHONPATH="$root/src" "$python" -s -B -c 'from icl_lab.runtime import require_local_environment; require_local_environment()'
+export PIP_CACHE_DIR="$root/artifacts/cache/pip"
+if [[ "$(uname -s)" == Linux ]]; then
+    "$python" -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch==2.7.1'
+fi
+"$python" -m pip install -r requirements/analysis.txt
+# Keep installation metadata outside src/ so stored scientific code hashes remain valid.
+"$python" - <<'PY'
+from pathlib import Path
+import sysconfig
+
+site = Path(sysconfig.get_path("purelib"))
+(site / "icl_replications.pth").write_text(str(Path.cwd() / "src") + "\n")
+PY
+"$python" -m ipykernel install --sys-prefix --name icl-replications \
+    --display-name 'ICL replications' --env PYTHONNOUSERSITE 1

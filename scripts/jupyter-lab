@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+cd -- "$root"
+export JUPYTER_CONFIG_DIR="$root/artifacts/config/jupyter"
+export JUPYTER_DATA_DIR="$root/artifacts/local-data/jupyter"
+export JUPYTER_RUNTIME_DIR="$root/artifacts/tmp/jupyter"
+export IPYTHONDIR="$root/artifacts/config/ipython"
+exec "$root/scripts/local-python" -m jupyterlab --ServerApp.root_dir="$root" "$@"

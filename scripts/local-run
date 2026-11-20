@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+icl_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+exec "$icl_root/scripts/local-python" "$icl_root/scripts/_local_run.py" "$@"

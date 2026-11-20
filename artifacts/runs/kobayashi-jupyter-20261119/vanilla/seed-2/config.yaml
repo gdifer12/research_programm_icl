@@ -1,0 +1,60 @@
+schema_version: 1
+task_seed: 17
+model_seed: 2
+train_seed: 10002
+eval_seed: 3
+train:
+  steps: 100000
+  batch_size: 128
+  lr: 0.001
+  optimizer: adamw
+  weight_decay: 0.1
+  betas:
+  - 0.9
+  - 0.999
+  scheduler: cosine
+  warmup_steps: 0
+  grad_clip: 1.0
+  eval_every: 1000
+  save_every: 1000
+  log_every: 10
+  precision: fp32
+  deterministic: true
+  threads: 4
+  analysis_checkpoints: 20
+  analysis_every: 0
+eval:
+  episodes: 2048
+  batch_size: 128
+  diagnostic_episodes: 2048
+  bootstrap_samples: 1000
+analysis:
+  ridge:
+  - 0.0
+  - 0.0001
+  - 0.01
+  - 1.0
+  shuffled_control: true
+  untrained_control: true
+  control_seed: 7301
+data:
+  n_modules: 6
+  n_dims: 16
+  teacher_hidden: 16
+  n_context: 64
+  teacher_truncation: 2.0
+  teacher_std_rescale: true
+model:
+  variant: vanilla
+  n_embd: 128
+  n_layer: 2
+  n_head: 4
+  expansion: 4
+  relative_buckets: 32
+  relative_max_distance: 128
+  bias: true
+  final_norm: false
+  norm_eps: 1.0e-05
+experiment: kobayashi
+name: kobayashi-vanilla-connected-plus
+technical_smoke: false

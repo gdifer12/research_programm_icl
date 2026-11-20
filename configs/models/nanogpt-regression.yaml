@@ -1,0 +1,54 @@
+# Черновое описание: загрузчик конфигурации и архитектура ещё не реализованы.
+# Этот файл нельзя передать в оригинальный train.py nanoGPT.
+name: nanogpt-regression
+status: draft
+implementation: null
+planned_code_directory: src/icl/models
+purpose: reproduce_garg_figure_2_effect
+initial_weights: random
+author_checkpoint_compatible: false
+
+input:
+  n_dims: 20
+  n_pairs: 41
+  sequence_length: 82
+  layout: interleaved_x_y
+  # x: [batch, 41, 20], y: [batch, 41]; после чередования: [batch, 82, 20].
+  y_encoding: scalar_in_first_coordinate_rest_zero
+  tokenizer: null
+  read_in: shared_linear
+
+transformer:
+  n_layer: 12
+  n_embd: 256
+  n_head: 8
+  mlp_hidden: 1024
+  block_size: 82
+  dropout: 0.0
+  attention: causal
+  position_encoding: learned_absolute
+  normalization: pre_layer_norm_with_final_layer_norm
+  activation: gelu
+  bias: true
+
+output:
+  read_out: linear_scalar
+  positions: x_only
+  # x_i расположен в токене 2*i; y_i в токене 2*i+1 ему недоступен.
+  n_predictions: 41
+  previous_pairs_min: 0
+  previous_pairs_max: 40
+  tied_to_input: false
+
+objective:
+  name: mse
+  reduction: mean_over_batch_and_x_positions
+  normalize_by_n_dims: false
+
+known_differences_from_author:
+  - nanoGPT_style_blocks_instead_of_Hugging_Face_GPT2Model
+  - gelu_instead_of_gelu_new
+unresolved_before_training:
+  - pin_implementation_revision_and_initialization
+  - define_training_config_including_optimizer_and_curriculum
+  - validate_causal_mask_and_prediction_target_alignment

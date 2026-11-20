@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-18T22:19:18.087932+00:00",
+  "purpose": "CPU-only comparison of two completed Assign and Add runs with the same seed",
+  "seeds": {
+    "model_seed": 1,
+    "train_seed": 10001,
+    "task_seed": 42,
+    "eval_seed": 44
+  },
+  "matching_inputs": {
+    "resolved_configs_equal": true,
+    "config_hashes_equal": true,
+    "code_hashes_equal": true,
+    "package_freezes_equal": true,
+    "recorded_environment_equal_except_timestamp": true,
+    "all_four_bank_hashes_equal": true,
+    "initial_task_state_equal": true,
+    "all_13_initial_model_tensors_bitwise_equal": true
+  },
+  "model_tensor_comparisons": [
+    {
+      "artifact": "initial.pt",
+      "step": 0,
+      "tensor_count": 13,
+      "different_tensor_count": 0,
+      "different_tensor_names": [],
+      "max_abs_difference": 0.0
+    },
+    {
+      "artifact": "step-00000001.pt",
+      "step": 1,
+      "tensor_count": 13,
+      "different_tensor_count": 1,
+      "different_tensor_names": [
+        "embedding.weight"
+      ],
+      "max_abs_difference": 5.960464477539063e-08
+    },
+    {
+      "artifact": "step-00000002.pt",
+      "step": 2,
+      "tensor_count": 13,
+      "different_tensor_count": 13,
+      "different_tensor_names": [
+        "position",
+        "embedding.weight",
+        "attention1.q.weight",
+        "attention1.k.weight",
+        "attention1.v.weight",
+        "attention1.out.weight",
+        "attention2.q.weight",
+        "attention2.k.weight",
+        "attention2.v.weight",
+        "attention2.out.weight",
+        "mlp.0.weight",
+        "mlp.2.weight",
+        "readout.weight"
+      ],
+      "max_abs_difference": 1.73225998878479e-07
+    },
+    {
+      "artifact": "step-00000100.pt",
+      "step": 100,
+      "tensor_count": 13,
+      "different_tensor_count": 13,
+      "different_tensor_names": [
+        "position",
+        "embedding.weight",
+        "attention1.q.weight",
+        "attention1.k.weight",
+        "attention1.v.weight",
+        "attention1.out.weight",
+        "attention2.q.weight",
+        "attention2.k.weight",
+        "attention2.v.weight",
+        "attention2.out.weight",
+        "mlp.0.weight",
+        "mlp.2.weight",
+        "readout.weight"
+      ],
+      "max_abs_difference": 0.007075902074575424
+    },
+    {
+      "artifact": "final.pt",
+      "step": 30000,
+      "tensor_count": 13,
+      "different_tensor_count": 13,
+      "different_tensor_names": [
+        "position",
+        "embedding.weight",
+        "attention1.q.weight",
+        "attention1.k.weight",
+        "attention1.v.weight",
+        "attention1.out.weight",
+        "attention2.q.weight",
+        "attention2.k.weight",
+        "attention2.v.weight",
+        "attention2.out.weight",
+        "mlp.0.weight",
+        "mlp.2.weight",
+        "readout.weight"
+      ],
+      "max_abs_difference": 0.6213048100471497
+    }
+  ],
+  "final_checkpoint_aliases_model_tensors_equal_within_each_run": [
+    "final.pt",
+    "last.pt",
+    "step-00030000.pt"
+  ],
+  "first_logged_metric_differences": {
+    "train_loss": {
+      "step": 80,
+      "old": 4.075479984283447,
+      "new": 4.075478553771973,
+      "abs_difference": 1.430511474609375e-06
+    },
+    "grad_norm": {
+      "step": 10,
+      "old": 0.14569158852100372,
+      "new": 0.14569160342216492,
+      "abs_difference": 1.4901161193847656e-08
+    }
+  },
+  "update_counts": {
+    "old": {
+      "attempted_batches": 30000,
+      "skipped_updates": 0,
+      "completed_updates": 30000
+    },
+    "new": {
+      "attempted_batches": 30000,
+      "skipped_updates": 0,
+      "completed_updates": 30000
+    }
+  },
+  "final_rng_state_comparison": {
+    "train_generator": {
+      "bitwise_equal": true,
+      "old_numel": 5056,
+      "new_numel": 5056
+    },
+    "torch": {
+      "bitwise_equal": true,
+      "old_numel": 5056,
+      "new_numel": 5056
+    },
+    "mps": {
+      "bitwise_equal": true,
+      "old_numel": 44,
+      "new_numel": 44
+    }
+  },
+  "conclusion": "При одинаковых сохранённых конфигурациях, коде, банках и побитово одинаковых начальных весах два запуска seed 1 дали разные траектории. Различие весов обнаруживается после первого обновления.",
+  "limitations": [
+    "Причина расхождения не локализована; эта проверка не доказывает, что причиной является недетерминизм MPS.",
+    "Побитовая повторяемость отдельных полных запусков не обеспечена, несмотря на train.deterministic=true.",
+    "Совпадение конечных RNG states само по себе не устанавливает причину численного расхождения и не является журналом всех входных batch.",
+    "Диапазон трёх новых обучений описывает наблюдённый разброс запусков; его нельзя целиком приписывать изменению seed.",
+    "Предыдущий и новый seed 1 не являются двумя разными независимыми seed."
+  ]
+}

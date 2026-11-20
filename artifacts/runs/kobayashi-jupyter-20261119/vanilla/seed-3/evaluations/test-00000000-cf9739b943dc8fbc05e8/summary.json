@@ -1,0 +1,549 @@
+{
+  "step": 0,
+  "attempt_id": "44d3793d2332",
+  "split": "test",
+  "checkpoint_sha256": "e886876fa50d60bcd415827e8b597f1a733db4ffe4ca78bd3a7fe8304e1d9aa1",
+  "bank_sha256": "9efd0b80543cb5dc37ef482080e25f31ed0f6cb2c57db73780c54158eacf4b47",
+  "code_hash": "99e416f3d4258373bd6fa157636b663780335c311a60916f3dafb1d53b4b5bda",
+  "model": {
+    "mse": {
+      "mean": 0.13359248006240493,
+      "count": 2048
+    },
+    "context_mean_mse": {
+      "mean": 0.12977902563332278,
+      "count": 2048
+    },
+    "pair_00_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_00_context_mean_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_01_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_01_context_mean_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_02_mse": {
+      "mean": 0.10313575230537081,
+      "count": 688
+    },
+    "pair_02_context_mean_mse": {
+      "mean": 0.09624178379649599,
+      "count": 688
+    },
+    "pair_03_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_03_context_mean_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_04_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_04_context_mean_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_05_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_05_context_mean_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_06_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_06_context_mean_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_07_mse": {
+      "mean": 0.1289369468893572,
+      "count": 658
+    },
+    "pair_07_context_mean_mse": {
+      "mean": 0.1261625375375564,
+      "count": 658
+    },
+    "pair_08_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_08_context_mean_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_09_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_09_context_mean_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_10_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_10_context_mean_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_11_mse": {
+      "mean": 0.16780554206340906,
+      "count": 702
+    },
+    "pair_11_context_mean_mse": {
+      "mean": 0.16603724721558927,
+      "count": 702
+    },
+    "pair_12_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_12_context_mean_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_13_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_13_context_mean_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_14_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "pair_14_context_mean_mse": {
+      "mean": null,
+      "count": 0
+    },
+    "paper_r2": {
+      "mean": -0.029384212205882054,
+      "definition": "1 - mean squared error / mean context-mean baseline error"
+    }
+  },
+  "baselines": {
+    "context_mean": {
+      "mse": {
+        "mean": 0.12977902248550194,
+        "count": 2048
+      },
+      "context_mean_mse": {
+        "mean": 0.12977902248550194,
+        "count": 2048
+      },
+      "pair_00_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_00_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_01_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_01_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_02_mse": {
+        "mean": 0.09624178118382308,
+        "count": 688
+      },
+      "pair_02_context_mean_mse": {
+        "mean": 0.09624178118382308,
+        "count": 688
+      },
+      "pair_03_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_03_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_04_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_04_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_05_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_05_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_06_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_06_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_07_mse": {
+        "mean": 0.12616253383644535,
+        "count": 658
+      },
+      "pair_07_context_mean_mse": {
+        "mean": 0.12616253383644535,
+        "count": 658
+      },
+      "pair_08_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_08_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_09_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_09_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_10_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_10_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_11_mse": {
+        "mean": 0.1660372440619041,
+        "count": 702
+      },
+      "pair_11_context_mean_mse": {
+        "mean": 0.1660372440619041,
+        "count": 702
+      },
+      "pair_12_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_12_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_13_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_13_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_14_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_14_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "paper_r2": {
+        "mean": 0.0,
+        "definition": "1 - mean squared error / mean context-mean baseline error"
+      }
+    },
+    "zero": {
+      "mse": {
+        "mean": 0.1368774099706222,
+        "count": 2048
+      },
+      "context_mean_mse": {
+        "mean": 0.12977902248550194,
+        "count": 2048
+      },
+      "pair_00_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_00_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_01_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_01_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_02_mse": {
+        "mean": 0.10280987260648247,
+        "count": 688
+      },
+      "pair_02_context_mean_mse": {
+        "mean": 0.09624178118382308,
+        "count": 688
+      },
+      "pair_03_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_03_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_04_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_04_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_05_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_05_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_06_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_06_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_07_mse": {
+        "mean": 0.12910848397586985,
+        "count": 658
+      },
+      "pair_07_context_mean_mse": {
+        "mean": 0.12616253383644535,
+        "count": 658
+      },
+      "pair_08_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_08_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_09_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_09_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_10_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_10_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_11_mse": {
+        "mean": 0.17754752252201128,
+        "count": 702
+      },
+      "pair_11_context_mean_mse": {
+        "mean": 0.1660372440619041,
+        "count": 702
+      },
+      "pair_12_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_12_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_13_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_13_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_14_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_14_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "paper_r2": {
+        "mean": -0.0546959543166019,
+        "definition": "1 - mean squared error / mean context-mean baseline error"
+      }
+    },
+    "privileged_true_code_executor": {
+      "mse": {
+        "mean": 1.3113993525511557e-15,
+        "count": 2048
+      },
+      "context_mean_mse": {
+        "mean": 0.12977902248550194,
+        "count": 2048
+      },
+      "pair_00_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_00_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_01_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_01_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_02_mse": {
+        "mean": 1.0884844685110857e-15,
+        "count": 688
+      },
+      "pair_02_context_mean_mse": {
+        "mean": 0.09624178118382308,
+        "count": 688
+      },
+      "pair_03_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_03_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_04_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_04_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_05_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_05_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_06_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_06_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_07_mse": {
+        "mean": 1.0231620947899434e-15,
+        "count": 658
+      },
+      "pair_07_context_mean_mse": {
+        "mean": 0.12616253383644535,
+        "count": 658
+      },
+      "pair_08_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_08_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_09_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_09_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_10_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_10_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_11_mse": {
+        "mean": 1.800039745466321e-15,
+        "count": 702
+      },
+      "pair_11_context_mean_mse": {
+        "mean": 0.1660372440619041,
+        "count": 702
+      },
+      "pair_12_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_12_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_13_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_13_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_14_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "pair_14_context_mean_mse": {
+        "mean": null,
+        "count": 0
+      },
+      "paper_r2": {
+        "mean": 0.9999999999999899,
+        "definition": "1 - mean squared error / mean context-mean baseline error"
+      }
+    }
+  },
+  "elapsed_seconds": 0.39736841700505465,
+  "technical_smoke": false,
+  "predictions": "artifacts/runs/kobayashi-jupyter-20261119/vanilla/seed-3/evaluations/test-00000000-cf9739b943dc8fbc05e8/predictions.npz"
+}

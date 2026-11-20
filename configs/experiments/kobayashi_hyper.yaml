@@ -1,0 +1,71 @@
+schema_version: 1
+experiment: kobayashi
+name: kobayashi-hypernetwork-connected-plus
+task_seed: 17
+model_seed: 1
+train_seed: 2
+eval_seed: 3
+data:
+  n_modules: 6
+  n_dims: 16
+  teacher_hidden: 16
+  n_context: 64
+  teacher_truncation: 2.0
+  teacher_std_rescale: true
+model:
+  variant: hypernetwork
+  n_embd: 64
+  n_layer: 2
+  n_head: 4
+  expansion: 4
+  latent_dim: 6
+  hyper_hidden: 32
+  relative_buckets: 32
+  relative_max_distance: 128
+  bias: true
+  final_norm: false
+  norm_eps: 0.00001
+train:
+  steps: 100000
+  batch_size: 128
+  lr: 0.001
+  optimizer: adamw
+  weight_decay: 0.0
+  betas: [0.9, 0.999]
+  scheduler: cosine
+  warmup_steps: 0
+  grad_clip: 1.0
+  eval_every: 1000
+  save_every: 1000
+  precision: fp32
+  deterministic: true
+  threads: 4
+eval:
+  episodes: 2048
+  batch_size: 128
+  diagnostic_episodes: 2048
+analysis:
+  ridge: [0.0, 0.0001, 0.01, 1.0]
+  shuffled_control: true
+  untrained_control: true
+  control_seed: 7301
+smoke:
+  data:
+    n_dims: 4
+    teacher_hidden: 4
+    n_context: 8
+  model:
+    n_embd: 32
+    n_layer: 2
+    n_head: 4
+    hyper_hidden: 8
+  train:
+    steps: 6
+    batch_size: 8
+    eval_every: 3
+    save_every: 3
+    threads: 1
+  eval:
+    episodes: 32
+    batch_size: 16
+    diagnostic_episodes: 32

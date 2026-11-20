@@ -1,0 +1,128 @@
+{
+  "step": 6500,
+  "attempt_id": "dfb236f15134",
+  "split": "id_test",
+  "checkpoint_sha256": "d025de206f2c676c8b253201902cb7887ca751f1f8420c0cab21cae92cdaa65b",
+  "bank_sha256": "fb0fadaef0d3cbe9601cd4fabf2942fce0f4f0f636978a5a95eaa558bf1ff2aa",
+  "code_hash": "99e416f3d4258373bd6fa157636b663780335c311a60916f3dafb1d53b4b5bda",
+  "model": {
+    "accuracy": {
+      "mean": 0.9929166666666667,
+      "count": 12000
+    },
+    "cross_entropy": {
+      "mean": 0.02540818721079263,
+      "count": 12000
+    },
+    "accuracy/0var_id": {
+      "mean": 0.9976696766676376,
+      "count": 3433
+    },
+    "accuracy/1var_id": {
+      "mean": 0.9973716488522867,
+      "count": 5707
+    },
+    "accuracy/2var_id": {
+      "mean": 0.9783216783216783,
+      "count": 2860
+    },
+    "accuracy/0var_add_ood": {
+      "mean": null,
+      "count": 0
+    },
+    "accuracy/1var_add_ood": {
+      "mean": null,
+      "count": 0
+    },
+    "accuracy/1var_position_ood": {
+      "mean": null,
+      "count": 0
+    },
+    "accuracy/2var_add_ood": {
+      "mean": null,
+      "count": 0
+    },
+    "accuracy/2var_position_ood_1": {
+      "mean": null,
+      "count": 0
+    },
+    "accuracy/2var_position_ood_2": {
+      "mean": null,
+      "count": 0
+    },
+    "accuracy/0var": {
+      "mean": 0.9976696766676376,
+      "count": 3433
+    },
+    "accuracy/1var": {
+      "mean": 0.9973716488522867,
+      "count": 5707
+    },
+    "accuracy/2var": {
+      "mean": 0.9783216783216783,
+      "count": 2860
+    }
+  },
+  "baselines": {
+    "oracle_arithmetic": {
+      "accuracy": {
+        "mean": 1.0,
+        "count": 12000
+      },
+      "cross_entropy": {
+        "mean": 0.0,
+        "count": 12000
+      },
+      "accuracy/0var_id": {
+        "mean": 1.0,
+        "count": 3433
+      },
+      "accuracy/1var_id": {
+        "mean": 1.0,
+        "count": 5707
+      },
+      "accuracy/2var_id": {
+        "mean": 1.0,
+        "count": 2860
+      },
+      "accuracy/0var_add_ood": {
+        "mean": null,
+        "count": 0
+      },
+      "accuracy/1var_add_ood": {
+        "mean": null,
+        "count": 0
+      },
+      "accuracy/1var_position_ood": {
+        "mean": null,
+        "count": 0
+      },
+      "accuracy/2var_add_ood": {
+        "mean": null,
+        "count": 0
+      },
+      "accuracy/2var_position_ood_1": {
+        "mean": null,
+        "count": 0
+      },
+      "accuracy/2var_position_ood_2": {
+        "mean": null,
+        "count": 0
+      },
+      "accuracy/0var": {
+        "mean": 1.0,
+        "count": 3433
+      },
+      "accuracy/1var": {
+        "mean": 1.0,
+        "count": 5707
+      },
+      "accuracy/2var": {
+        "mean": 1.0,
+        "count": 2860
+      }
+    }
+  },
+  "elapsed_seconds": 0.2759659589937655,
+  "technical_smoke": false
+}

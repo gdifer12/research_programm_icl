@@ -1,0 +1,48 @@
+schema_version: 1
+experiment: garg
+task_seed: 17
+model_seed: 1
+train_seed: 2
+eval_seed: 3
+data:
+  n_dims: 20
+  n_pairs: 41
+  curriculum:
+    enabled: true
+    dims_start: 5
+    pairs_start: 11
+    interval: 2000
+model:
+  n_embd: 256
+  n_layer: 12
+  n_head: 8
+train:
+  steps: 500001
+  batch_size: 64
+  optimizer: adam
+  lr: 0.0001
+  weight_decay: 0.0
+  betas: [0.9, 0.999]
+  scheduler: constant
+  grad_clip: 0.0
+  eval_every: 1000
+  save_every: 1000
+  log_every: 100
+  analysis_checkpoints: 20
+  precision: fp32
+  deterministic: true
+  threads: 4
+eval:
+  episodes: 1280
+  batch_size: 64
+  diagnostic_episodes: 256
+  bootstrap_samples: 1000
+analysis: {}
+smoke:
+  data:
+    n_dims: 4
+    n_pairs: 9
+    curriculum: {enabled: false}
+  model: {n_embd: 32, n_layer: 2, n_head: 4}
+  train: {steps: 6, batch_size: 4, eval_every: 3, save_every: 3, log_every: 1}
+  eval: {episodes: 16, batch_size: 8, diagnostic_episodes: 16, bootstrap_samples: 50}

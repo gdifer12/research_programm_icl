@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+python="$root/.venv/bin/python"
+if [[ ! -x "$python" ]]; then
+    echo 'Set up the environment first with ./scripts/setup.' >&2
+    exit 1
+fi
+export PYTHONPATH="$root/src:$root/scripts"
+export PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 PYTORCH_ENABLE_MPS_FALLBACK=0
+export MPLCONFIGDIR="$root/artifacts/cache/matplotlib" MPLBACKEND=Agg
+unset PYTHONHOME
+"$python" -s -P -c 'from icl_lab.runtime import require_local_environment; require_local_environment()'
+exec "$python" -s -P "$@"

@@ -1,0 +1,11 @@
+# Sequential execution. Each seed changes model initialization and training stream.
+# Task/teacher and evaluation-bank seeds stay fixed for paired comparisons.
+experiments:
+  - config: configs/experiments/garg.yaml
+    seeds: [1, 2, 3]
+  - config: configs/experiments/assign_add.yaml
+    seeds: [1, 2, 3]
+  - config: configs/experiments/kobayashi.yaml
+    seeds: [1, 2, 3]
+  - config: configs/experiments/kobayashi_hyper.yaml
+    seeds: [1, 2, 3]
